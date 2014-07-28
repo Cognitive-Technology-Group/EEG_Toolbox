@@ -28,9 +28,7 @@ To start:
 		If running experiment, another GUI will pop-up
 
 TODO:
-	Allow for Gui to select range of frequencies.
-	Auto-connect device
-	Implement Option for using with Emotiv EPOC + Testbench
+	Allow for Gui to select frequencies.
 
 
 
