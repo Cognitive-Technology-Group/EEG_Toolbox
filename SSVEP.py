@@ -42,6 +42,10 @@ class SSVEP(object):
 
     def epoch(self, mark):
         self.collector.tag(mark)
+
+    def stop(self):
+        self.mywin.close()
+        core.quit()
         
    
     def start(self):
@@ -65,7 +69,7 @@ class SSVEP(object):
             
             #reset tagging
             self.should_tag = False
-            #self.epoch(0)
+            self.epoch(0)
             while self.Trialclock.getTime()<self.trialdur:
 
                 #draws square and fixation on screen.
@@ -85,7 +89,7 @@ class SSVEP(object):
                 self.epoch(0)
                 self.should_tag = True
                 """
-                #self.epoch(70)
+                self.epoch(70)
                
                 for frameN in range(self.frame_on):
                     self.mywin.flip()
@@ -100,7 +104,7 @@ class SSVEP(object):
                     self.mywin.flip()
                 self.pattern2.setAutoDraw(False)
                 
-            #self.epoch(0)
+            self.epoch(0)
             #clean black screen off
             self.mywin.flip()
             #wait certain time for next trial
@@ -114,7 +118,8 @@ class SSVEP(object):
             ###Tagging the Data at end of stimulus###
             
     """          
-        #self.collector.disconnect()
+        self.collector.disconnect()
+        self.stop()
             
 
   
