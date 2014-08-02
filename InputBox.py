@@ -15,9 +15,9 @@ class InputBox(object):
     self.myDlg.addText('Subject info')
     self.myDlg.addField('Participant:')#0
     self.myDlg.addField('Session', 001)#1
-    self.myDlg.addField('Port', '/dev/tty/ACM0')#2
+    self.myDlg.addField('Port', '/dev/ttyACM0')#2
     self.myDlg.addText('Frequency Selction')
-    self.myDlg.addField('Frequency', choices=["None", "6", "7","10","12", "15", "20"])#3
+    self.myDlg.addField('Frequency', choices=["None", "6", "7.5","10","12", "15", "20"])#3
     self.myDlg.addText('Flash Duration')
     self.myDlg.addField('Duration', '5')#4
     self.myDlg.addText('Time after stimulus')
@@ -42,6 +42,7 @@ class InputBox(object):
     self.num_trials= '%s' %self.options['NumberTrials']
     #time to wait between trials
     self.wait_dur= '%s' %self.options['InterTrialTime']
+    self.freq = self.options['Frequency']
 
   def file(self):
           return str(self.fname)
@@ -57,4 +58,7 @@ class InputBox(object):
   
   def waitduration(self):
           return int(self.wait_dur)
+
+  def frequency(self):
+          return float(self.freq)
 

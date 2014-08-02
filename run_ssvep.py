@@ -24,22 +24,32 @@ trialnums = expinfos.stim_trials()
 waitduration = expinfos.waitduration()
 print port_addr
 print type(port_addr)
+frequency_selection = expinfos.frequency()
 
 
 #set of stimuli followed by frequency of stimuli. 
 
-"""
-stimuli75 = SSVEP(frame_on=4, frame_off=4, fname=filename, port=port_addr, trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
-stimuli75.start()
-print 1
-"""
-"""
-stimuli12=SSVEP(frame_on=3, frame_off=2, fname=filename, port=port_addr,
+if frequency_selection == 6:
+	stimuli75 = SSVEP(frame_on=5, frame_off=5, fname=filename, port=port_addr, trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
+	stimuli75.start()
+elif frequency_selection == 7.5:
+	stimuli12=SSVEP(frame_on=4, frame_off=4, fname=filename, port=port_addr,
 	trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
-stimuli12.start()
-print 2
-"""
-stimuli20=SSVEP(frame_on=2, frame_off=1, fname=filename, port=port_addr,
+	stimuli12.start()
+elif frequency_selection == 10:
+	stimuli12=SSVEP(frame_on=3, frame_off=3, fname=filename, port=port_addr,
 	trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
-stimuli20.start()
+	stimuli12.start()
+elif frequency_selection == 12:
+	stimuli12=SSVEP(frame_on=3, frame_off=2, fname=filename, port=port_addr,
+	trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
+	stimuli12.start()
+elif frequency_selection == 15:
+	stimuli12=SSVEP(frame_on=2, frame_off=2, fname=filename, port=port_addr,
+	trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
+	stimuli12.start()
+elif frequency_selection == 20:
+	stimuli20=SSVEP(frame_on=2, frame_off=1, fname=filename, port=port_addr,
+	trialdur=flash_dur, numtrials=trialnums, waitdur=waitduration)
+	stimuli20.start()
 

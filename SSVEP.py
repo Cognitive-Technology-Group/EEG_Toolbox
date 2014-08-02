@@ -56,7 +56,7 @@ class SSVEP(object):
         self.freq = 60/(self.frame_on+self.frame_off)
 
         #start saving data from EEG device.
-        #self.collecting()
+        self.collecting()
 
         #possibly convert trialdur into frames given refresh rate (normally set at 60Hz)
         self.framerate = self.mywin.getActualFrameRate()

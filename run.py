@@ -36,7 +36,7 @@ if myDlg.OK:  # then the user pressed OK
       fft_plot=raw_plotter.RawPlotter()
       fft_plot.start()
     elif value == 'Spectogram':
-      specgram=spectral_plotter.SpectralPlotter()
+      specgram=spectral_plotter.SpectralPlotter(1)
       specgram.start()
             
       print 'Spectogram'
