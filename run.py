@@ -11,9 +11,9 @@ myDlg = gui.Dlg(title="OpenBCI Menu")
 myDlg.addText('Subject info')
 myDlg.addField('Participant')#0
 myDlg.addField('Session', 001)#1
-myDlg.addField('Port', '/dev/tty/ACM0')#2
+myDlg.addField('Port', '/dev/ttyACM0')#2
 myDlg.addText('Visual Options')
-myDlg.addField('Plots:', choices=["None", "Spectral_Plot", "FFT",
+myDlg.addField('Plots:', choices=["None", "Multi_Plot", "FFT",
 "Spectogram"])#3
 myDlg.addText('Experiment Choices')
 myDlg.addField('Experiments', choices=["None", "SSVEP", "ERP",
@@ -29,11 +29,11 @@ if myDlg.OK:  # then the user pressed OK
 		#iterate through dictionary to see if Function is called
 		#right now just using print statements, soon insert actual python scripts
   for value in options.itervalues():
-    if value == 'Spectral_Plot':
-      time_plot=raw_plotter.RawPlotter()
-      time_plot.start()				
+    if value == 'Multi Plot':
+      multi=multi_plotter.MultiPlotter()
+      multi.start()				
     elif value == 'FFT':
-      fft_plot=raw_plotter.RawPlotter()
+      fft_plot=fft_plotter.FFTPlotter()
       fft_plot.start()
     elif value == 'Spectogram':
       specgram=spectral_plotter.SpectralPlotter(1)

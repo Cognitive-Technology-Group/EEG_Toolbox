@@ -50,7 +50,7 @@ class OpenBCIBoard(object):
 
   """
 
-  def __init__(self, port=None, baud=115200, filter_data=True):
+  def __init__(self, port='/dev/ttyACM0', baud=115200, filter_data=True):
     if not port:
       port = find_port()
       if not port:
@@ -74,10 +74,9 @@ class OpenBCIBoard(object):
     
     """
     if not self.streaming:
-      if self.filtering_data:
-        self.warn('Enabling filter')
-        self.ser.write('f')
-        self.ser.readline()
+      #if self.filtering_data:
+      #  self.warn('Enabling filter')
+      #  self.ser.readline()
         
       # Send an 'b' to the board to tell it to start streaming us text.
       self.ser.write('b')

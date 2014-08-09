@@ -19,7 +19,7 @@ from pylab import *
 #what needs to be implemented
 #   A if statement for multiprocessing/threading.
 
-class RawPlotter(object):
+class FFTPlotter(object):
 
     def __init__(self, port=None, baud=115200):
         self.board = OpenBCIBoard(port, baud)
