@@ -30,14 +30,14 @@ if myDlg.OK:  # then the user pressed OK
 		#right now just using print statements, soon insert actual python scripts
   for value in options.itervalues():
     if value == 'Multi Plot':
-      multi=multi_plotter.MultiPlotter()
+      multi=multi_plotter.MultiPlotter(1)
       multi.start()				
     elif value == 'FFT':
       fft_plot=fft_plotter.FFTPlotter()
       fft_plot.start()
     elif value == 'Spectogram':
-      specgram=spectral_plotter.SpectralPlotter(1)
-      specgram.start()
+      specgram=spectral_plotter.SpectralPlotter()
+      specgram.start(1)
             
       print 'Spectogram'
     elif value == 'SSVEP':
