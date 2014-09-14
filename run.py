@@ -1,8 +1,7 @@
 
 from psychopy import gui
-import raw_plotter
-import spectral_plotter
-import multi_plotter
+
+
 
 
 #class InputBox(object):
@@ -29,13 +28,16 @@ if myDlg.OK:  # then the user pressed OK
 		#iterate through dictionary to see if Function is called
 		#right now just using print statements, soon insert actual python scripts
   for value in options.itervalues():
-    if value == 'Multi Plot':
-      multi=multi_plotter.MultiPlotter(1)
-      multi.start()				
+    if value == 'Multi_Plot':
+      import multi_plotter
+      multi=multi_plotter.MultiPlotter()
+      multi.start(1)				
     elif value == 'FFT':
+      import raw_plotter
       fft_plot=fft_plotter.FFTPlotter()
       fft_plot.start()
     elif value == 'Spectogram':
+      import spectral_plotter
       specgram=spectral_plotter.SpectralPlotter()
       specgram.start(1)
             
@@ -45,7 +47,7 @@ if myDlg.OK:  # then the user pressed OK
     elif value == 'ERP':
       print 'ERP'
     elif value == 'Motor_Imagery':
-      print 'Imagine!'
+      import motorimagery
     
 			
 
